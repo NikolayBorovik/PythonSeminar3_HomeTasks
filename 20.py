@@ -18,3 +18,20 @@
 # Напишите программу, которая вычисляет стоимость введенного пользователем слова.
 # Будем считать, что на вход подается только одно слово, которое содержит либо только
 # английские, либо только русские буквы.
+
+word = input("Enter your word: ").upper()
+dict_letters = {1:"AEIOULNSTRАВЕИНОРСТ",
+                2:"DGДКЛМПУ",
+                3:"BCMPБГЁЬЯ",
+                4:"FHVWYЙЫ",
+                5:"KЖЗХЦЧ",
+                8:"JXШЭЮ",
+                10:"QZФЩЪ"}
+
+wordValue = 0
+for i in range(len(word)):
+    for k, v in dict_letters.items():
+        if word[i] in v:
+            wordValue += k
+
+print(f"The value of the word is: {wordValue}")
